@@ -1,70 +1,11 @@
 import Express from "express";
 import Mongoose from "mongoose";
-import users from "../dbUser.js";
+import users from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import lodash from "lodash"
 import Joi from "joi"
 import JWT from "jsonwebtoken";
-// import usersList from "./users.js"
 
-
-/**
- * @swagger
- * components: 
- *   Schemas:
- *        Users:
- *            type:Object
- *            required:
- *              -title
- *              -
- *            properties:
- *              _id:
- *                type:String
- *                userName: String
-                  email: String
-                  password: String
-                  language: String
-                  currency: String
-                  profilePicture:String
-                  location: { country: String, city: String }
-                  messageRoom: String
-                  cartList: [
-                        name: String
-                        price: Number
-                        quantity: Number
-                        totalPrice: Number
-                        company: String
-                        productImage: String
-                  ]
-                  savedList: [
-                        name: String
-                        price: Number
-                        quantity: Number
-                        totalPrice: Number
-                        company: String
-                        productImage: String
-                  ]
-                  messages: [
-                             sender: String
-          _id: String
-          profilePicture: String,
-          senderId: Joi.string().trim(),
-          receiverId: Joi.string().min(24).max(24).trim(),
-          message: Joi.string().trim(),
-          room: Joi.number(),
-          timeStamp: Joi.string().trim(),
-                  ]
-                  notifications: [
-
-                  ]
-                  directPeople: [
-
-                  ]
-                  channels: [
-
-                  ]
- *                
- */
 const connection_url = "mongodb://localhost/selling";
 Mongoose.connect(connection_url);
 
