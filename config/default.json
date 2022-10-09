@@ -1,0 +1,16 @@
+{
+    // Customer module configs
+    "Customer": {
+      "dbConfig": {
+        "host": "localhost",
+        "serverPort": 4000,
+        "chatPort":5000,
+        "dbName": "mongodb://localhost/selling"
+      },
+      "credit": {
+        "initialLimit": 100,
+        // Set low for development
+        "initialDays": 1
+      }
+    }
+  }
