@@ -1,10 +1,9 @@
-import Mongoose from "mongoose";
 import Express from "express";
 import products from "../models/productsModel.js";
 import lodash from "lodash";
 import users from "../models/userModel.js";
 import Joi from "joi";
-import connectMongo from '../utils/connectMongo'
+import connectMongo from '../utils/connectMongo.js'
 connectMongo();
 
 const router = Express.Router();

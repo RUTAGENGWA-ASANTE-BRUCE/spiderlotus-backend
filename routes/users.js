@@ -1,9 +1,8 @@
-import Mongoose from "mongoose";
 import Express from "express";
 import users from "../models/userModel.js";
 import lodash from "lodash";
 import Joi from "joi";
-import connectMongo from '../utils/connectMongo'
+import connectMongo from '../utils/connectMongo.js'
 connectMongo();
 const router = Express.Router();
 router.get("/", async (req, res) => {

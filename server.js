@@ -20,7 +20,6 @@ const credentials = config.get("Customer.dbConfig");
 
 app.use(Express.json());
 app.use(Cors());
-app.use("/auth", auth);
 app.use("/users", users);
 app.use("/orders", orders);
 app.use("/products", products);
@@ -28,6 +27,7 @@ app.use("/productTypes", productTypes);
 app.use("/default", defaults);
 app.use("/temporary", temporary);
 app.use("/payment", payment);
+app.use("/auth", auth);
 
 
 app.get("/", (req, res) => {

@@ -1,11 +1,10 @@
 import Express from "express";
-import Mongoose from "mongoose";
 import users from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import lodash from "lodash"
 import Joi from "joi"
 import JWT from "jsonwebtoken";
-import connectMongo from '../utils/connectMongo'
+import connectMongo from '../utils/connectMongo.js'
 connectMongo();
 
 var usersList;
