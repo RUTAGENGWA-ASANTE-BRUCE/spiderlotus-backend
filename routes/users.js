@@ -3,9 +3,8 @@ import Express from "express";
 import users from "../models/userModel.js";
 import lodash from "lodash";
 import Joi from "joi";
-const connection_url = "mongodb://localhost/selling";
-Mongoose.connect(connection_url);
-
+import connectMongo from '../utils/connectMongo'
+connectMongo();
 const router = Express.Router();
 router.get("/", async (req, res) => {
   users.find((err, data) => {

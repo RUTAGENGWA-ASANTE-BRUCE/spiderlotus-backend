@@ -5,9 +5,8 @@ import bcrypt from "bcrypt";
 import lodash from "lodash"
 import Joi from "joi"
 import JWT from "jsonwebtoken";
-
-const connection_url = "mongodb://localhost/selling";
-Mongoose.connect(connection_url);
+import connectMongo from '../utils/connectMongo'
+connectMongo();
 
 var usersList;
 

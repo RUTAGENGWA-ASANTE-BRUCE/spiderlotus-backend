@@ -4,8 +4,8 @@ import Express from "express";
 import productTypes from "../models/productTypesModel.js";
 import lodash from "lodash";
 import Joi from "joi";
-const connection_url = "mongodb://localhost/selling";
-Mongoose.connect(connection_url);
+import connectMongo from '../utils/connectMongo'
+connectMongo();
 
 const router = Express.Router();
 
