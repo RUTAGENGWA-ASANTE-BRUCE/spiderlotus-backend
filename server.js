@@ -54,6 +54,6 @@ io.on("connection",(socket)=>{
   })
 })
 
-server.listen(credentials.serverPort, () =>
+server.listen(process.env.PORT || credentials.serverPort, () =>
   console.log(`The server is running on ${credentials.serverPort}...`)
 );
