@@ -30,7 +30,7 @@ router.post("/:userId", async (req, res) => {
     const user = await users.findById(userId);
 
     const schema = Joi.object().keys({
-      userName: Joi.string().trim(),
+      usertitle: Joi.string().trim(),
       email: Joi.string().email().trim(),
       password: Joi.string().min(5).max(10),
       language: Joi.string().trim(),
@@ -40,21 +40,21 @@ router.post("/:userId", async (req, res) => {
       messageRoom: Joi.string().trim(),
       cartList: Joi.array().items(
         Joi.object().keys({
-          name: Joi.string().trim(),
+          title: Joi.string().trim(),
           price: Joi.number(),
           quantity: Joi.number(),
           totalPrice: Joi.number(),
-          company: Joi.string().trim(),
+          description: Joi.string().trim(),
           productImage: Joi.string().trim(),
         })
       ),
       savedList: Joi.array().items(
         Joi.object().keys({
-          name: Joi.string().trim(),
+          title: Joi.string().trim(),
           price: Joi.number(),
           quantity: Joi.number(),
           totalPrice: Joi.number(),
-          company: Joi.string().trim(),
+          description: Joi.string().trim(),
           productImage: Joi.string().trim(),
         })
       ),
@@ -73,7 +73,7 @@ router.post("/:userId", async (req, res) => {
       notifications: Joi.array(),
       directPeople: Joi.array().items(
         Joi.object().keys({
-          userName: Joi.string().trim(),
+          usertitle: Joi.string().trim(),
           profilePicture: Joi.string().trim(),
           email: Joi.string().email().trim(),
           _id: Joi.string().min(24).max(24).trim(),
@@ -109,9 +109,9 @@ router.post("/:userId", async (req, res) => {
           const alreadyInCart = lodash.filter(
             user[property],
             (product) =>
-              product.name == wanted[property][0].name &&
-              product.productImage == wanted[property][0].productImage &&
-              product.company == wanted[property][0].company &&
+              product.title == wanted[property][0].title &&
+              product.image == wanted[property][0].image &&
+              product.description == wanted[property][0].description &&
               product.price == wanted[property][0].price
           );
           console.log(alreadyInCart.length);
@@ -135,8 +135,8 @@ router.post("/:userId", async (req, res) => {
                         user[property],
                         (product) => {
                           if (
-                            product.name == one.name &&
-                            product.company == one.company &&
+                            product.title == one.title &&
+                            product.description == one.description &&
                             product.image == one.image &&
                             product.price == one.price
                           ) {

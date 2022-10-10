@@ -23,11 +23,11 @@ router.post("/:userId", async (req, res) => {
       otherDetails: Joi.object().keys({
         products: Joi.array().items(
           Joi.object().keys({
-            name: Joi.string().trim(),
+            title: Joi.string().trim(),
             price: Joi.number(),
             quantity: Joi.number(),
             totalPrice: Joi.number(),
-            company: Joi.string().trim(),
+            description: Joi.string().trim(),
             productImage: Joi.string().trim(),
           })
         ),

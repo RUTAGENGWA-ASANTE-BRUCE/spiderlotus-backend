@@ -10,7 +10,7 @@ const router = Express.Router();
 
 router.post("/:userId", async (req, res) => {
     const schema = Joi.object().keys({
-      name: Joi.string().trim(),
+      title: Joi.string().trim(),
       image: Joi.string().trim(),
       price: Joi.object().keys({
         maximum: Joi.number(),
@@ -34,7 +34,7 @@ router.post("/:userId", async (req, res) => {
       ),
       companyDetails: Joi.array().items(
         Joi.object().keys({
-          company: Joi.string().trim(),
+          description: Joi.string().trim(),
           Location: Joi.string().trim(),
           "Other Products": Joi.string().trim(),
           "Industrial activities": Joi.string().trim(),
