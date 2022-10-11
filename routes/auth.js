@@ -99,7 +99,7 @@ router.post("/signup", async (req, res) => {
         quantity: Joi.number(),
         totalPrice: Joi.number(),
         description: Joi.string().trim(),
-        productImage: Joi.string().trim(),
+        image: Joi.string().trim(),
       })
     ).required(),
     savedList: Joi.array().items(
@@ -109,7 +109,7 @@ router.post("/signup", async (req, res) => {
         quantity: Joi.number(),
         totalPrice: Joi.number(),
         description: Joi.string().trim(),
-        productImage: Joi.string().trim(),
+        image: Joi.string().trim(),
       }),
     ).required(),
     messages: Joi.array().items(

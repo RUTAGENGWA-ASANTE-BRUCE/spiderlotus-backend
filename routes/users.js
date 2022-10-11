@@ -45,7 +45,7 @@ router.post("/:userId", async (req, res) => {
           quantity: Joi.number(),
           totalPrice: Joi.number(),
           description: Joi.string().trim(),
-          productImage: Joi.string().trim(),
+          image: Joi.string().trim(),
         })
       ),
       savedList: Joi.array().items(
@@ -55,7 +55,7 @@ router.post("/:userId", async (req, res) => {
           quantity: Joi.number(),
           totalPrice: Joi.number(),
           description: Joi.string().trim(),
-          productImage: Joi.string().trim(),
+          image: Joi.string().trim(),
         })
       ),
       messages: Joi.array().items(
