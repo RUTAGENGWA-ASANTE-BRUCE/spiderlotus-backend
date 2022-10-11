@@ -8,7 +8,7 @@ connectMongo();
 const router = Express.Router();
 
 
-router.post("/:userId", async (req, res) => {
+router.post("/", async (req, res) => {
     const schema = Joi.object().keys({
       customer: Joi.string().trim(),
       customerImage: Joi.string().trim(),
