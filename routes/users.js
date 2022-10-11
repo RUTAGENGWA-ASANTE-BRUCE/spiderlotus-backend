@@ -30,7 +30,7 @@ router.post("/:userId", async (req, res) => {
     const user = await users.findById(userId);
 
     const schema = Joi.object().keys({
-      usertitle: Joi.string().trim(),
+      userName: Joi.string().trim(),
       email: Joi.string().email().trim(),
       password: Joi.string().min(5).max(10),
       language: Joi.string().trim(),
@@ -73,7 +73,7 @@ router.post("/:userId", async (req, res) => {
       notifications: Joi.array(),
       directPeople: Joi.array().items(
         Joi.object().keys({
-          usertitle: Joi.string().trim(),
+          userName: Joi.string().trim(),
           profilePicture: Joi.string().trim(),
           email: Joi.string().email().trim(),
           _id: Joi.string().min(24).max(24).trim(),

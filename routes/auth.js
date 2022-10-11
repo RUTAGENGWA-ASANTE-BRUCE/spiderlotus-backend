@@ -84,7 +84,7 @@ router.get("/last",async (req, res) => {
 
 router.post("/signup", async (req, res) => {
   const schema = Joi.object().keys({
-    usertitle: Joi.string().trim().required(),
+    userName: Joi.string().trim().required(),
     email: Joi.string().email().trim().required(),
     password: Joi.string().min(8).max(16).required(),
     language: Joi.string().trim().required(),
@@ -127,7 +127,7 @@ router.post("/signup", async (req, res) => {
     notifications: Joi.array().required(),
     directPeople: Joi.array().items(
       Joi.object().keys({
-        usertitle: Joi.string().trim(),
+        userName: Joi.string().trim(),
         profilePicture: Joi.string().trim(),
         email: Joi.string().email().trim(),
         _id: Joi.string().min(24).max(24).trim(),
@@ -208,7 +208,7 @@ router.post("/token", async (req, res) => {
 });
 
 const user={
-  usertitle:"bruce",
+  userName:"bruce",
   password:"43567tui87",
   email:"bruce@gmail.com",
   profilePicture:"hello.jpg",
@@ -225,7 +225,7 @@ const user={
 }
 router.post("/lodash",async (req, res)=>{
    const schema=Joi.object().keys({
-     usertitle:Joi.string().trim(),
+     userName:Joi.string().trim(),
      email:Joi.string().email().trim(),
      password:Joi.string().min(5).max(10),
      language:Joi.string().trim(),
